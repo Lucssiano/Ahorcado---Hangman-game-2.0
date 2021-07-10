@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ### Generales ### */
+:root {
+	--font-page: 'Poppins', sans-serif;
+	--black: #000000;
+	--oxford-blue: #14213d;
+	--orange-web: #fca311;
+	--platinum: #e5e5e5;
+	--white: #ffffff;
+	--maximum-red: #d62828;
+}
+body {
+	font-family: var(--font-page);
+	background-color: var(--oxford-blue);
+	text-align: center;
+	text-transform: uppercase;
+}
+/* ###################### */
+
+/* ### Header ### */
+header h1 {
+	padding: 2rem;
+	color: var(--orange-web);
+}
+/* ###################### */
+
+/* Random Topic */
+.random-topic {
+	padding: 2rem;
+}
+.random-topic p {
+	padding: 2rem;
+	font-weight: 800;
+	color: var(--black);
+	background-color: var(--orange-web);
+	display: inline-block;
+}
+.random-topic p span {
+	color: var(--maximum-red);
+}
+.random-topic .label-change-topic {
+	color: var(--orange-web);
+	font-weight: 700;
+}
+.random-topic select.change-topic {
+	margin-top: 2rem;
+	padding: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: var(--font-page);
+	background-color: var(--maximum-red);
+	box-shadow: 0 0 0.9rem -0.2rem var(--platinum);
+}
+@media (min-width: 768px) {
+	.random-topic select.change-topic:hover {
+		cursor: pointer;
+	}
+}
+/* ###################### */
+
+/* ### Main ### */
+main {
+	margin: 3rem 0;
+	padding: 2rem;
+}
+main span.word-lines {
+	color: var(--platinum);
+	letter-spacing: 0.5rem;
+	font-size: 2.8rem;
+}
+/* ###################### */
+
+/* Abecedario */
+.alphabet-letters-container h2 {
+	color: #80b918;
+	padding: 1rem;
+}
+.alphabet-letters-container .grid-alphabet-container {
+	display: grid;
+	grid-template-columns: repeat(4, 6rem);
+	justify-content: center;
+	padding: 1rem;
+}
+@media (min-width: 768px) {
+	.alphabet-letters-container .grid-alphabet-container {
+		grid-template-columns: repeat(9, 6rem);
+	}
+}
+.alphabet-letters-container button {
+	padding: 0.8rem;
+	margin: 0.5rem;
+	border: none;
+	background-color: var(--black);
+	color: var(--white);
+}
+@media (min-width: 768px) {
+	.alphabet-letters-container button:hover {
+		cursor: pointer;
+		transition: 0.5s;
+		box-shadow: 0 0 0.9rem -0.2rem var(--orange-web);
+		color: var(--orange-web);
+	}
+}
+/* ###################### */
+
+/* Intentos */
+.attempts-container {
+	margin: 3rem 0;
+}
+.attempts-container h3 {
+	padding-bottom: 2rem;
+	color: var(--orange-web);
+}
+.attempts-container h3 span.attemps {
+	color: var(--platinum);
+	letter-spacing: 0.1rem;
+}
+/* ###################### */
+
+/* Copyright Section */
+footer.copyright-section {
+	background-color: var(--black);
+	color: var(--platinum);
+	padding: 2rem;
+	text-transform: lowercase;
+}
+footer.copyright-section a {
+	color: var(--platinum);
+}
+/* ###################### */

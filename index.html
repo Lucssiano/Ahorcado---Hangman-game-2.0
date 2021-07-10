@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <link rel="icon" href="img/imagen1.jpg">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ahorcado</h1>
+    </header>
+
+    <section class="random-topic">
+        <p>Tema generado aleatoriamente <br><br><span class="random-topic-span"></span></p>
+        <br>
+        <br>
+        <br>
+        <label for="change-topic" class="label-change-topic">Cambiar de Tema</label>
+        <br>
+        <select name="topics" class="change-topic">
+            <option value="" disabled selected>-- Elija un tema --</option>
+            <option value="Paises">Paises</option>
+            <option value="Animales">Animales</option>
+        </select>
+        <!-- Ver de darle la opción al usuario de elegir el tema con un select , en vez de que sea random -->
+    </section>
+    <main>
+        <span class="word-lines"></span>
+    </main>
+
+    <section class="alphabet-letters-container">
+        <h2>Presione una letra</h2>
+        <div class="grid-alphabet-container">
+            <button class="alphabet-letter" value="a">A</button>
+            <button class="alphabet-letter" value="b">B</button>
+            <button class="alphabet-letter" value="c">C</button>
+            <button class="alphabet-letter" value="d">D</button>
+            <button class="alphabet-letter" value="e">E</button>
+            <button class="alphabet-letter" value="f">F</button>
+            <button class="alphabet-letter" value="g">G</button>
+            <button class="alphabet-letter" value="h">H</button>
+            <button class="alphabet-letter" value="i">I</button>
+            <button class="alphabet-letter" value="j">J</button>
+            <button class="alphabet-letter" value="k">K</button>
+            <button class="alphabet-letter" value="l">L</button>
+            <button class="alphabet-letter" value="m">M</button>
+            <button class="alphabet-letter" value="n">N</button>
+            <button class="alphabet-letter" value="ñ">Ñ</button>
+            <button class="alphabet-letter" value="o">O</button>
+            <button class="alphabet-letter" value="p">P</button>
+            <button class="alphabet-letter" value="q">Q</button>
+            <button class="alphabet-letter" value="r">R</button>
+            <button class="alphabet-letter" value="s">S</button>
+            <button class="alphabet-letter" value="t">T</button>
+            <button class="alphabet-letter" value="u">U</button>
+            <button class="alphabet-letter" value="v">V</button>
+            <button class="alphabet-letter" value="w">W</button>
+            <button class="alphabet-letter" value="x">X</button>
+            <button class="alphabet-letter" value="y">Y</button>
+            <button class="alphabet-letter" value="z">Z</button>
+        </div>
+    </section>
+
+    <section class="attempts-container">
+        <h3>Intentos: <span class="attemps">10</span></h3>
+        <img src="img/imagen1.jpg" alt="Personaje ahorcado">
+    </section>
+
+    <!-- <button class="play-again">Jugar denuevo</button> -->
+
+    <footer class="copyright-section">
+        <span>
+            <a href="https://github.com/Lucssiano" target="_blank">Luccsiano</a> &copy; 2021
+        </span>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
