@@ -9,6 +9,7 @@
 	--platinum: #e5e5e5;
 	--white: #ffffff;
 	--maximum-red: #d62828;
+	--apple-green: #80b918;
 }
 body {
 	font-family: var(--font-page);
@@ -57,14 +58,15 @@ header h1 {
 		cursor: pointer;
 	}
 }
+
 /* ###################### */
 
-/* ### Main ### */
-main {
+/* ### Word Container ### */
+.word-container {
 	margin: 3rem 0;
 	padding: 2rem;
 }
-main span.word-lines {
+.word-container span.word-lines {
 	color: var(--platinum);
 	letter-spacing: 0.5rem;
 	font-size: 2.8rem;
@@ -73,7 +75,7 @@ main span.word-lines {
 
 /* Abecedario */
 .alphabet-letters-container h2 {
-	color: #80b918;
+	color: var(--apple-green);
 	padding: 1rem;
 }
 .alphabet-letters-container .grid-alphabet-container {
@@ -93,14 +95,25 @@ main span.word-lines {
 	border: none;
 	background-color: var(--black);
 	color: var(--white);
+	transition: 0.5s;
 }
 @media (min-width: 768px) {
 	.alphabet-letters-container button:hover {
 		cursor: pointer;
-		transition: 0.5s;
+		transform: scale(1.2);
 		box-shadow: 0 0 0.9rem -0.2rem var(--orange-web);
 		color: var(--orange-web);
 	}
+}
+.alphabet-letters-container button.correct {
+	box-shadow: 0 0 0.9rem -0.2rem var(--apple-green);
+	transform: scale(1.2);
+	color: var(--apple-green);
+}
+.alphabet-letters-container button.incorrect {
+	box-shadow: 0 0 0.9rem -0.2rem var(--maximum-red);
+	transform: scale(1.2);
+	color: var(--maximum-red);
 }
 /* ###################### */
 
@@ -112,7 +125,7 @@ main span.word-lines {
 	padding-bottom: 2rem;
 	color: var(--orange-web);
 }
-.attempts-container h3 span.attemps {
+.attempts-container h3 span.attempts {
 	color: var(--platinum);
 	letter-spacing: 0.1rem;
 }

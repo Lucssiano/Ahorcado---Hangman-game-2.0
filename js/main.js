@@ -13,7 +13,7 @@ const animalsWords = ['cocodrilo', 'canguro', 'rinoceronte', 'mono', 'tigre', 'l
 /* Words of the game all together */
 const wordsArray = [countryWords, animalsWords];
 
-const wordLines = $('main .word-lines');
+const wordLines = $('span.word-lines');
 const randomTopicSpan = $('.random-topic-span');
 /* The select selector which changes the topic of the word */
 const changeTopicSelect = $('select.change-topic');
@@ -56,16 +56,61 @@ changeTopicSelect.addEventListener('change', () => {
 
 // --- Alphabet buttons section --- //
 const alphabetButtons = $$('.alphabet-letter');
+const attemptsContainer = $('span.attempts');
+// const randomTopicSection = $('.random-topic');
+/* Ver de poner las fotos y los intentos arriba , ya cuando se toca una letra se borra lo de arriba y se pone la foto */
+let attempts = 10;
 
 alphabetButtons.forEach((btn) => {
 	btn.addEventListener('click', () => {
+        // randomTopicSection.style.display = 'none';
+		btn.disabled = true;
+		btn.style.opacity = 0.5;
+		if (!wordGenerated.includes(btn.value)) {
+			btn.classList.add('incorrect');
+			setTimeout(() => {
+				btn.classList.remove('incorrect');
+			}, 1000);
+			attempts--;
+			manPainting();
+		}
 		for (let i = 0; i < wordGenerated.length; i++) {
 			if (btn.value === wordGenerated[i]) {
 				linesArray[i] = wordGenerated[i];
 				linesArray[i].innerText = btn.textContent;
 				wordLines.innerText = linesArray.join('');
+				btn.classList.add('correct');
+				setTimeout(() => {
+					btn.classList.remove('correct');
+				}, 1000);
 			}
 		}
+		checkGameOver();
 	});
 });
 // ------------------------------------- //
+
+// --- Function that check if the game is over because the user wins or if the attemps have finished --- //
+function checkGameOver() {
+	if (attempts === 0 || !linesArray.includes('-')) {
+		let finalWord;
+		attempts === 0 ? (finalWord = 'Perdiste!') : (finalWord = 'Ganaste!');
+		setTimeout(() => {
+			alert(`${finalWord} , la palabra era "${wordGenerated}"`);
+			window.location.href = window.location.href;
+		}, 1000);
+	}
+}
+// ------------------------------------- //
+
+// --- Function that draw the man hanged when the user have a mistake --- //
+let imgNumber = 1;
+const hangedImg = $('.hanged-man');
+function manPainting(){
+	window.scrollTo(0,document.body.scrollHeight);
+	imgNumber++;
+	setTimeout(() => {
+		attemptsContainer.innerText = attempts;
+		hangedImg.src = `img/imagen${imgNumber}.png`;
+	}, 500);
+}
