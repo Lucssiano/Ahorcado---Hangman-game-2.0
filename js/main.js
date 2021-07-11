@@ -96,7 +96,7 @@ function checkGameOver() {
 		setTimeout(() => {
 			alert(`${finalWord} , la palabra era "${wordGenerated}"`);
 			window.location.href = window.location.href;
-		}, 1000);
+		}, 800);
 	}
 }
 // ------------------------------------- //
