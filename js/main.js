@@ -27,7 +27,6 @@ function randomWordGenerator(wordsIndex, topic) {
 	let randomWord = Math.floor(Math.random() * wordsArray[wordsIndex].length);
 	randomTopicSpan.innerText = topic;
 	wordGenerated = wordsArray[wordsIndex][randomWord];
-	console.log(wordGenerated);
 	for (let i = 0; i < wordGenerated.length; i++) {
 		linesArray[i] = '-';
 	}
@@ -57,13 +56,10 @@ changeTopicSelect.addEventListener('change', () => {
 // --- Alphabet buttons section --- //
 const alphabetButtons = $$('.alphabet-letter');
 const attemptsContainer = $('span.attempts');
-// const randomTopicSection = $('.random-topic');
-/* Ver de poner las fotos y los intentos arriba , ya cuando se toca una letra se borra lo de arriba y se pone la foto */
 let attempts = 10;
 
 alphabetButtons.forEach((btn) => {
 	btn.addEventListener('click', () => {
-        // randomTopicSection.style.display = 'none';
 		btn.disabled = true;
 		btn.style.opacity = 0.5;
 		if (!wordGenerated.includes(btn.value)) {
@@ -117,3 +113,4 @@ function manPainting(){
 		window.scrollTo(document.body.scrollHeight, 0);
 	}, 1500);
 }
+// ------------------------------------- //
