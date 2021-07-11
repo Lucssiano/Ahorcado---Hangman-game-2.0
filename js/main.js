@@ -17,6 +17,7 @@ const wordLines = $('span.word-lines');
 const randomTopicSpan = $('.random-topic-span');
 /* The select selector which changes the topic of the word */
 const changeTopicSelect = $('select.change-topic');
+const selectContainer = $('.select-container');
 let wordTopic;
 /* Variable where lines spaces of the word generated are displayed */
 let linesArray = [];
@@ -60,6 +61,7 @@ let attempts = 10;
 
 alphabetButtons.forEach((btn) => {
 	btn.addEventListener('click', () => {
+		selectContainer.style.display = 'none';
 		btn.disabled = true;
 		btn.style.opacity = 0.5;
 		if (!wordGenerated.includes(btn.value)) {
@@ -111,6 +113,6 @@ function manPainting(){
 	}, 500);
 	setTimeout(() => {
 		window.scrollTo(document.body.scrollHeight, 0);
-	}, 1500);
+	}, 1200);
 }
 // ------------------------------------- //
