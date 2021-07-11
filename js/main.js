@@ -113,4 +113,7 @@ function manPainting(){
 		attemptsContainer.innerText = attempts;
 		hangedImg.src = `img/imagen${imgNumber}.png`;
 	}, 500);
+	setTimeout(() => {
+		window.scrollTo(document.body.scrollHeight, 0);
+	}, 1500);
 }
