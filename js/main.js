@@ -10,8 +10,11 @@ function $$(selector) {
 /* Words of the game separated on topics */
 const countryWords = ['china', 'dinamarca', 'finlandia', 'rusia', 'argentina', 'españa'];
 const animalsWords = ['cocodrilo', 'canguro', 'rinoceronte', 'mono', 'tigre', 'leon'];
+const professions = ['arquitecto', 'doctor', 'enfermero', 'periodista', 'profesor', 'mecanico'];
+const fruits = ['banana', 'manzana', 'pera', 'anana', 'durazno', 'sandia'];
+const colours = ['amarillo', 'verde', 'rojo', 'azul', 'violeta', 'blanco', 'gris', 'blanco', 'lightblue', 'brown'];
 /* Words of the game all together */
-const wordsArray = [countryWords, animalsWords];
+const wordsArray = [countryWords, animalsWords, professions, fruits, colours];
 
 const wordLines = $('span.word-lines');
 const randomTopicSpan = $('.random-topic-span');
@@ -104,8 +107,8 @@ function checkGameOver() {
 // --- Function that draw the man hanged when the user have a mistake --- //
 let imgNumber = 1;
 const hangedImg = $('.hanged-man');
-function manPainting(){
-	window.scrollTo(0,document.body.scrollHeight);
+function manPainting() {
+	window.scrollTo(0, document.body.scrollHeight);
 	imgNumber++;
 	setTimeout(() => {
 		attemptsContainer.innerText = attempts;
